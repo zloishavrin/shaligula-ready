@@ -1,5 +1,5 @@
 const Router = require('express');
-const controller = require('../controllers/infoController');
+const controller = require('../controllers/testController');
 const { check } = require('express-validator');
 
 const router = new Router();
@@ -14,8 +14,8 @@ router.get('/search-test', [
     check('search', 'Строка поиска не может быть пустой.').notEmpty()
 ], controller.searchTest);
 
-router.get('/check-result', [
+/*router.get('/check-result', [
     check('question', 'Массив вопрос не может быть пустым').notEmpty()
-], controller.checkResult);
+], controller.checkResult);*/
 
 module.exports = router;
