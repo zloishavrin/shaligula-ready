@@ -1,0 +1,5 @@
+.env
+/app/node_modules
+/app/image
+mongo
+.DS_Store
