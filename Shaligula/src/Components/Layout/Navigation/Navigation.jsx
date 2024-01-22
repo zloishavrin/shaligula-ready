@@ -2,7 +2,7 @@ import { View } from 'react-native';
 import { styles } from './NavigationStyle';
 import { NavigationButton } from '../../Utils/NavigationButton/NavigationButton';
 
-export const Navigation = ({ openHistory }) => {
+export const Navigation = ({ openHistory, openSearch }) => {
 
     return (
         <View style={styles.navigation}>
@@ -12,6 +12,7 @@ export const Navigation = ({ openHistory }) => {
             />
             <NavigationButton 
                 type="search"
+                handler={openSearch}
             />
             <NavigationButton 
                 type="like"

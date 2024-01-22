@@ -22,14 +22,14 @@ services:
     depends_on:
       - mongo
     ports:
-      - "8888:8081"
+      - "8889:8081"
   app:
     build: ./app
     volumes:
       - ./app:/usr/src/app
       - /usr/src/app/node_modules
     ports:
-      - "3333:3333"
+      - "3336:3333"
     env_file:
       ./.env
     depends_on:
