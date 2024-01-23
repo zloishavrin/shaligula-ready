@@ -8,7 +8,9 @@ export const styles = StyleSheet.create({
         paddingBottom: '3%',
         paddingTop: '3%',
         borderRadius: 10,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        justifyContent: 'center',
+        alignItems: 'center'
     },
     buttonText: {
         color: '#FFFFFF',

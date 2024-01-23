@@ -46,6 +46,24 @@ class testController {
         }
     }
 
+    async getTestsByIds(req, res) {
+        try {
+            const ids = req.body.tests;
+            const tests = [];
+
+            for(let index = 0; index < ids; index++) {
+                const test = await Test.findById(ids[index]);
+                tests.push(test);
+            }
+
+            res.json(tests);
+        }
+        catch(error) {
+            console.error(error);
+            res.status(400).json({message: 'Ошибка поиска тестов.'});
+        }
+    }
+
 }
 
 module.exports = new testController();

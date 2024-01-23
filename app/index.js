@@ -19,7 +19,7 @@ const start = async () => {
     try {
         await mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-        //init();
+        init();
     }
     catch(error) {
         console.log(error);

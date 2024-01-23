@@ -6,26 +6,60 @@ export const useFavorite = () => {
     const [favorite, setFavorite] = useState(null);
 
     useEffect(() => {
-        console.log(1);
-        const storeData = async (value) => {
+        const getStore = async () => {
             try {
-                console.log(2);
-                const jsonValue = JSON.stringify(value);
-                console.log(1);
-                await AsyncStorage.setItem('my-key', jsonValue);
-                const logs = await AsyncStorage.getItem('my-key');
-                console.log(logs);
-                setFavorite(logs);
-            } catch (e) {
-                console.log(e);
+                const favoriteStorage = await AsyncStorage.getItem('favorite');
+                if(favoriteStorage === null) {
+                    setFavorite([]);
+                }
+                else {
+                    setFavorite(JSON.parse(favoriteStorage));
+                }
+            } 
+            catch (e) {
+                console.error(e);
             }
-
-            
         };
-        storeData({aue: 'eu333r'});
-
+        getStore();
     }, []);
 
-    return favorite;
+    useEffect(() => {
+        const changeStore = async (value) => {
+            try {
+                const valueJSON = JSON.stringify(value);
+                await AsyncStorage.setItem('favorite', valueJSON);
+            }
+            catch(error) {
+                console.log(error);
+            }
+        }
+        changeStore(favorite);
+    }, [favorite]);
+
+    const addFavorite = (element) => {
+        if(favorite && !favorite.includes(element)) {
+            const newFavorite = [...favorite, element];
+            setFavorite(newFavorite);
+        }
+        else if(favorite === null) {
+            setFavorite([element]);
+        }
+    }
+
+    const deleteFavorite = (element) => {
+        if(favorite && favorite.some(object => 
+            object._id === element._id
+        )) {
+            if(favorite.length > 1) {
+                const newFavorite = favorite.filter(item => item._id !== element._id);
+                setFavorite(newFavorite);
+            }
+            else {
+                setFavorite([]);
+            }
+        }
+    }
+
+    return { favorite, addFavorite, deleteFavorite };
 
 }

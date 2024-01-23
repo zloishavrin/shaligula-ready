@@ -2,14 +2,14 @@ import { TouchableHighlight, Image } from "react-native"
 import { styles } from "./SmallButton.style"
 const Like = require('../../../assets/like.png');
 
-export const SmallButton = () => {
+export const SmallButton = ({ isActive, handler }) => {
 
     return (
         <TouchableHighlight
-            onPress={() => console.log(1)}
+            onPress={handler}
             activeOpacity={1}
             underlayColor={'#333333'}
-            style={styles.container}
+            style={isActive? styles.containerOn : styles.containerOff}
         >
             <Image 
                 source={Like} 

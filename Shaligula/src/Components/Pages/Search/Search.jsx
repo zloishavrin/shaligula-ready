@@ -1,35 +1,51 @@
-import { ScrollView, Text, TextInput } from "react-native";
+import { ScrollView, TextInput } from "react-native";
 import { styles } from "./Search.style";
 import useGet from "../../../Hooks/Fetch/useGet";
 import { Loader } from "../../Utils/Loader/Loader";
 import { Error } from "../../Utils/Error/Error";
 import { TestElement } from "../../Utils/TestElement/TestElement";
 import { useFavorite } from "../../../Hooks/LocalStorage/useFavorite";
-import { useEffect } from "react";
+import { useState } from "react";
 
 export const Search = () => {
 
-    const [ loading, error, value ] = useGet('/all-test');
-    const fav = useFavorite();
+    const [ search, setSearch ] = useState('');
+    const [ loading, error, value ] = useGet(search ? `/search-test?search=${search}` : '/all-test');
+    const { favorite, addFavorite, deleteFavorite } = useFavorite();
 
-    useEffect(() => {
-        console.log(fav);
-    }, [fav]);
-
-    if(loading) return <Loader />
+    if(loading) return <Loader />;
     else if(error) return <Error />;
 
     return (
-        <ScrollView style={styles.container}>
+        <>
+            <TextInput 
+                editable
+                inputMode="text"
+                keyboardType="default"
+                placeholder="Поиск..."
+                style={styles.input}
+                numberOfLines={1}
+                value={search}
+                onChangeText={(text) => setSearch(text)}
+            />
 
-            <TextInput />
+            <ScrollView style={styles.container}>
+                {value.map((element) => {
+                    console.log(element);
+                    console.log(favorite);
+                    const isFavorite = favorite && favorite.some(object => 
+                        object._id === element._id
+                    );
 
-            {value.map((element) => 
-                <TestElement
-                    title={element.name}
-                />
-            )}
-        </ScrollView>
+                    return <TestElement
+                        isFavorite={isFavorite}
+                        element={element}
+                        favoriteHandler={!isFavorite ? addFavorite : deleteFavorite}
+                        key={element._id}
+                    />
+                })}
+            </ScrollView>
+        </>
     )
 
 }
