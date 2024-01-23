@@ -12,6 +12,8 @@ export const Favorite = () => {
 
     const { favorite, deleteFavorite } = useFavorite();
 
+    if(favorite && !favorite.length) return <Error text={"Пока что у Вас нет избранных тестов :("} />
+
     return (
         <ScrollView style={styles.container}>
             {favorite && favorite.map(element => {

@@ -14,7 +14,7 @@ export const Search = () => {
     const { favorite, addFavorite, deleteFavorite } = useFavorite();
 
     if(loading) return <Loader />;
-    else if(error) return <Error />;
+    else if(error) return <Error text={'Извините, произошла ошибка при загрузке.'}/>;
 
     return (
         <>
@@ -31,8 +31,6 @@ export const Search = () => {
 
             <ScrollView style={styles.container}>
                 {value.map((element) => {
-                    console.log(element);
-                    console.log(favorite);
                     const isFavorite = favorite && favorite.some(object => 
                         object._id === element._id
                     );

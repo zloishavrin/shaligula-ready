@@ -4,12 +4,12 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: '#191919',
         color: 'white',
-        height: '100%'
+        flex: 1
     },
     page: {
         backgroundColor: '#191919',
         color: 'white',
-        height: '90%',
+        flex: 9,
         alignItems: 'center'
     }
 })
