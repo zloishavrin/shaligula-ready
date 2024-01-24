@@ -8,14 +8,17 @@ import { styles } from "./Test.style";
 import { useEffect, useState } from "react";
 import { useResults } from "../../../Hooks/LocalStorage/useResults";
 import { BigButton } from "../../Utils/BigButton/BigButton";
+import { CloseButton } from "../../Utils/CloseButton/CloseButton";
 const CloseIcon = require('../../../assets/close.png');
 
-export const Test = ({ element, closeTest }) => {
+export const Test = ({ element, closeTest, openResults }) => {
 
     const [ loading, error, test ] = useGet(`/current-test?id=${element._id}`);
     const [ quest, setQuest ] = useState(Array(20).fill(null));
     const [ result, setResult ] = useState(false);
     const { addResults } = useResults();
+
+    console.log(openResults);
 
     if(loading) return <Loader />
     else if(error) return <Error text={'К сожалению, не получилось загрузить тест, попробуйте позже :('} />
@@ -60,19 +63,9 @@ export const Test = ({ element, closeTest }) => {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView style={styles.contentContainer}>
-                <View style={styles.buttonContainer}>
-                <TouchableHighlight
-                    style={styles.button}
-                    activeOpacity={1}
-                    underlayColor={'#333333'}
-                    onPress={closeTest}
-                >
-                    <Image 
-                        style={styles.buttonImage}
-                        source={CloseIcon} 
-                    />
-                </TouchableHighlight>
-                </View>
+                <CloseButton 
+                    handler={closeTest}
+                />
                 { 
                     !result ? 
                         <Multiform closeTest={finishTest}>
@@ -94,6 +87,10 @@ export const Test = ({ element, closeTest }) => {
                             <Text style={styles.resultsText}>{result.true_answer}/{result.all_quest}</Text>
                             <BigButton 
                                 text={'Подробнее'} 
+                                handler={() =>  {
+                                    console.log(1);
+                                    openResults(result);
+                                }}
                             />
                             <BigButton 
                                 text={'Закрыть'}

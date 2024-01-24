@@ -2,19 +2,19 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     button: {
-        backgroundColor: '#434343',
-        paddingLeft: '10%',
-        paddingRight: '10%',
-        paddingBottom: '3%',
-        paddingTop: '3%',
+        backgroundColor: "#434343",
+        paddingLeft: "10%",
+        paddingRight: "10%",
+        paddingBottom: "3%",
+        paddingTop: "3%",
         borderRadius: 10,
-        overflow: 'hidden',
-        justifyContent: 'center',
-        alignItems: 'center'
+        overflow: "hidden",
+        justifyContent: "center",
+        alignItems: "center"
     },
     buttonText: {
-        color: '#FFFFFF',
+        color: "#FFFFFF",
         fontSize: 20,
-        fontWeight: 'bold'
+        fontWeight: "bold"
     }
 })

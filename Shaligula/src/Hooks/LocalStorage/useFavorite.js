@@ -1,5 +1,5 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useState, useEffect } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState, useEffect } from "react";
 
 export const useFavorite = () => {
 
@@ -8,7 +8,7 @@ export const useFavorite = () => {
     useEffect(() => {
         const getStore = async () => {
             try {
-                const favoriteStorage = await AsyncStorage.getItem('favorite');
+                const favoriteStorage = await AsyncStorage.getItem("favorite");
                 if(favoriteStorage === null) {
                     setFavorite([]);
                 }
@@ -27,10 +27,10 @@ export const useFavorite = () => {
         const changeStore = async (value) => {
             try {
                 const valueJSON = JSON.stringify(value);
-                await AsyncStorage.setItem('favorite', valueJSON);
+                await AsyncStorage.setItem("favorite", valueJSON);
             }
             catch(error) {
-                console.log(error);
+                console.error(error);
             }
         }
         changeStore(favorite);

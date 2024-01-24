@@ -4,7 +4,7 @@ import { styles } from "./History.style";
 import { useResults } from "../../../Hooks/LocalStorage/useResults";
 import { Error } from "../../Utils/Error/Error";
 
-export const History = () => {
+export const History = ({ openResults }) => {
 
     const { results } = useResults();
 
@@ -16,6 +16,7 @@ export const History = () => {
                 return <HistoryElement 
                     key={element.id} 
                     element={element}
+                    openResults={() => openResults(element)}
                 />
             })}
         </ScrollView>

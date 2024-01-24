@@ -10,22 +10,22 @@ export const usePost = (path, body) => {
         const fetchResource = async () => {
             try {
                 fetch("https://dev.shaligula.ru/university-api/tests", {
-                    method: 'POST',
+                    method: "POST",
                     headers: {
                         "Content-Type": "application/json"
                     },
                     body: JSON.stringify(body),
-                    redirect: 'follow'
+                    redirect: "follow"
                 })
-                .then(response => response.json())
-                .then(result => {
-                    console.log(result);
-                    setValue(result);
-                    setLoading(false);
-                })
-                .catch(error => {
-                    throw new Error(`Error: ${error}`);
-                });
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log(result);
+                        setValue(result);
+                        setLoading(false);
+                    })
+                    .catch(error => {
+                        throw new Error(`Error: ${error}`);
+                    });
             } 
             catch (error) {
                 setError(error);

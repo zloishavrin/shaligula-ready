@@ -1,5 +1,5 @@
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useState, useEffect } from 'react';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useState, useEffect } from "react";
 
 export const useResults = () => {
 
@@ -8,7 +8,7 @@ export const useResults = () => {
     useEffect(() => {
         const getStore = async () => {
             try {
-                const resultsStorage = await AsyncStorage.getItem('results');
+                const resultsStorage = await AsyncStorage.getItem("results");
                 if(resultsStorage === null) {
                     setResults([]);
                 }
@@ -27,10 +27,10 @@ export const useResults = () => {
         const changeStore = async (value) => {
             try {
                 const valueJSON = JSON.stringify(value);
-                await AsyncStorage.setItem('results', valueJSON);
+                await AsyncStorage.setItem("results", valueJSON);
             }
             catch(error) {
-                console.log(error);
+                console.error(error);
             }
         }
         changeStore(results);

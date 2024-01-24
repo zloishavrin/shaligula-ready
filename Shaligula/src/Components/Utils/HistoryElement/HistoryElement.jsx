@@ -2,7 +2,7 @@ import { View, Text } from "react-native"
 import { styles } from "./HistoryElement.style"
 import { BigButton } from "../BigButton/BigButton"
 
-export const HistoryElement = ({ element }) => {
+export const HistoryElement = ({ element, openResults }) => {
 
     console.log(element);
 
@@ -15,7 +15,10 @@ export const HistoryElement = ({ element }) => {
                 <Text style={styles.mainText}>{element.true_answer}/{element.all_quest}</Text>
             </View>
             <View style={styles.buttonContain}>
-                <BigButton text={'Смотреть'} />
+                <BigButton 
+                    text={'Смотреть'} 
+                    handler={openResults}
+                />
             </View>
         </View>
     )

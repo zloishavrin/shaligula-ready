@@ -6,20 +6,24 @@ import { Search } from './Components/Pages/Search/Search';
 import { Favorite } from './Components/Pages/Favorite/Favorite';
 import { useState } from 'react';
 import { Test } from './Components/Pages/Test/Test';
+import { Results } from './Components/Pages/Results/Results';
 
 function App() {
 
     const [page, setPage] = useState(<Search />);
     const [test, setTest] = useState(null);
+    const [results, setResults] = useState(null);
+
+    const closeResults = () => setResults(null);
+    const openResults = (results) => {
+        setTest(null);
+        setResults(<Results results={results} closeResults={closeResults} />)
+    }
 
     const closeTest = () =>  setTest(null);
-    const closeTestAndOpenHitsory = () => {
-        setPage(<History />);
-        setTest(null);
-    }
-    const openTest = (test) => setTest(<Test element={test} closeTest={closeTest} />);
+    const openTest = (test) => setTest(<Test element={test} closeTest={closeTest} openResults={openResults} />);
 
-    const openHistory = () => setPage(<History />);
+    const openHistory = () => setPage(<History openResults={openResults} />);
     const openSearch = () => setPage(<Search openTest={openTest} />);
     const openFavorite = () => setPage(<Favorite openTest={openTest} />);
 
@@ -34,12 +38,24 @@ function App() {
             {test ?  
                 test
             : 
+
+            results ?
+                results
+            :
                 <>
                     <View style={styles.page}>
                         {page}
                     </View>
 
                     <Navigation 
+                        active={
+                            page.type == History ?
+                                'history'
+                            : page.type == Search ?
+                                'search'
+                            :
+                                'favorite'
+                        }
                         openHistory={openHistory}
                         openSearch={openSearch}
                         openFavorite={openFavorite}

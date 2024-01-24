@@ -2,16 +2,16 @@ import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
     container: {
-        width: '100%',
-        height: '100%',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column'
+        width: "100%",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column"
     },
     text: {
-        color: '#ffffff',
+        color: "#ffffff",
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: "center"
     },
     image: {
         width: 120,
