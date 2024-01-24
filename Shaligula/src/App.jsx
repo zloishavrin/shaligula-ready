@@ -12,9 +12,10 @@ function App() {
     const [page, setPage] = useState(<Search />);
     const [test, setTest] = useState(null);
 
-    const closeTest = () =>  {
-        setTest(null);
+    const closeTest = () =>  setTest(null);
+    const closeTestAndOpenHitsory = () => {
         setPage(<History />);
+        setTest(null);
     }
     const openTest = (test) => setTest(<Test element={test} closeTest={closeTest} />);
 

@@ -6,12 +6,16 @@ import { Multiform } from "../../Utils/Multiform/Multiform";
 import { NavigationButton } from "../../Utils/NavigationButton/NavigationButton";
 import { styles } from "./Test.style";
 import { useEffect, useState } from "react";
+import { useResults } from "../../../Hooks/LocalStorage/useResults";
+import { BigButton } from "../../Utils/BigButton/BigButton";
 const CloseIcon = require('../../../assets/close.png');
 
 export const Test = ({ element, closeTest }) => {
 
     const [ loading, error, test ] = useGet(`/current-test?id=${element._id}`);
     const [ quest, setQuest ] = useState(Array(20).fill(null));
+    const [ result, setResult ] = useState(false);
+    const { addResults } = useResults();
 
     if(loading) return <Loader />
     else if(error) return <Error text={'К сожалению, не получилось загрузить тест, попробуйте позже :('} />
@@ -49,7 +53,8 @@ export const Test = ({ element, closeTest }) => {
             all_quest: allQuest
         }
 
-        closeTest();
+        addResults(newResult);
+        setResult(newResult);
     }
 
     return (
@@ -68,19 +73,35 @@ export const Test = ({ element, closeTest }) => {
                     />
                 </TouchableHighlight>
                 </View>
-                <Multiform closeTest={finishTest}>
-                    {
-                        test.map((element, index) => 
-                            <QuestElement 
-                                key={element._id}
-                                element={element}
-                                quest={quest[index]}
-                                changeQuest={changeQuest}
-                                number={index}
-                            />    
-                        )
-                    }
-                </Multiform>
+                { 
+                    !result ? 
+                        <Multiform closeTest={finishTest}>
+                            {
+                                test.map((element, index) => 
+                                    <QuestElement 
+                                        key={element._id}
+                                        element={element}
+                                        quest={quest[index]}
+                                        changeQuest={changeQuest}
+                                        number={index}
+                                    />    
+                                )
+                            } 
+                        </Multiform>
+                    :
+                        <View style={styles.resultsContainter}>
+                            <Text style={styles.resultsTitle}>Ваш результат:</Text>
+                            <Text style={styles.resultsText}>{result.true_answer}/{result.all_quest}</Text>
+                            <BigButton 
+                                text={'Подробнее'} 
+                            />
+                            <BigButton 
+                                text={'Закрыть'}
+                                handler={closeTest}
+                            />
+                        </View>
+                }
+
             </ScrollView>
         </SafeAreaView>
     )

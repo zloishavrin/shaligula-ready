@@ -23,5 +23,21 @@ export const styles = StyleSheet.create({
     buttonImage: {
         width: '100%',
         height: '100%'
+    },
+    resultsContainter: {
+        width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    resultsTitle: {
+        color: "#FFFFFF",
+        fontSize: 32,
+        fontWeight: 'bold',
+        marginTop: 40
+    },
+    resultsText: {
+        color: '#FFFFFF',
+        fontSize: 26
     }
 })

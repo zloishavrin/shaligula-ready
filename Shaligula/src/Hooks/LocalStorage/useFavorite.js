@@ -38,7 +38,7 @@ export const useFavorite = () => {
 
     const addFavorite = (element) => {
         if(favorite && !favorite.includes(element)) {
-            const newFavorite = [...favorite, element];
+            const newFavorite = [element, ...favorite];
             setFavorite(newFavorite);
         }
         else if(favorite === null) {

@@ -1,18 +1,23 @@
 import { ScrollView, Text } from "react-native";
 import { HistoryElement } from "../../Utils/HistoryElement/HistoryElement";
 import { styles } from "./History.style";
+import { useResults } from "../../../Hooks/LocalStorage/useResults";
+import { Error } from "../../Utils/Error/Error";
 
 export const History = () => {
 
-    const history = [];
+    const { results } = useResults();
 
-    for(let index = 0; index < 22; index++) {
-        history.push(<HistoryElement />);
-    }
+    if(results && !results.length) return <Error text={"Пока что у Вас нет истории пройденных тестов."} />
 
     return (
         <ScrollView style={styles.container}>
-            {history}
+            {results && results.map(element => {
+                return <HistoryElement 
+                    key={element.id} 
+                    element={element}
+                />
+            })}
         </ScrollView>
     )
 
