@@ -1,9 +1,9 @@
 import { Image, Text, View } from "react-native"
-import { BigButton } from "../Big Button/BigButton"
+import { BigButton } from "../BigButton/BigButton"
 import { styles } from "./TestElement.style"
 import { SmallButton } from "../SmallButton/SmallButton"
 
-export const TestElement = ({ isFavorite, element, favoriteHandler }) => {
+export const TestElement = ({ isFavorite, element, favoriteHandler, openTest }) => {
 
     return (
         <View style={styles.container}>
@@ -16,6 +16,7 @@ export const TestElement = ({ isFavorite, element, favoriteHandler }) => {
                 <View style={styles.bottomContainer}>
                     <BigButton 
                         text={'Перейти'}
+                        handler={() => openTest(element)}
                     />
                     <SmallButton 
                         isActive={isFavorite}

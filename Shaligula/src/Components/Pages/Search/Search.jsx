@@ -7,7 +7,7 @@ import { TestElement } from "../../Utils/TestElement/TestElement";
 import { useFavorite } from "../../../Hooks/LocalStorage/useFavorite";
 import { useState } from "react";
 
-export const Search = () => {
+export const Search = ({ openTest }) => {
 
     const [ search, setSearch ] = useState('');
     const [ loading, error, value ] = useGet(search ? `/search-test?search=${search}` : '/all-test');
@@ -40,6 +40,7 @@ export const Search = () => {
                         element={element}
                         favoriteHandler={!isFavorite ? addFavorite : deleteFavorite}
                         key={element._id}
+                        openTest={openTest}
                     />
                 })}
             </ScrollView>

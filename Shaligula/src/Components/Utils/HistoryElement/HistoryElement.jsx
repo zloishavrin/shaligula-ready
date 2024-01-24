@@ -1,6 +1,6 @@
 import { View, Text } from "react-native"
 import { styles } from "./HistoryElement.style"
-import { BigButton } from "../Big Button/BigButton"
+import { BigButton } from "../BigButton/BigButton"
 
 export const HistoryElement = () => {
 

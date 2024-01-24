@@ -18,8 +18,10 @@ export const NavigationButton = ({ type, handler }) => {
                     <Image style={styles.image} source={HistoryIcon} />
                 : type === "search" ?
                     <Image style={styles.image} source={SearchIcon} />
-                :
+                : type === 'like' ?
                     <Image style={styles.image} source={LikeIcon} />
+                :
+                    <Image style={styles.image} source={CloseIcon} />
             }
         </TouchableHighlight>
     )

@@ -51,7 +51,7 @@ class testController {
             const ids = req.body.tests;
             const tests = [];
 
-            for(let index = 0; index < ids; index++) {
+            for(let index = 0; index < ids.length; index++) {
                 const test = await Test.findById(ids[index]);
                 tests.push(test);
             }
