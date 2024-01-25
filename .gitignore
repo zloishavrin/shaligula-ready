@@ -7,3 +7,5 @@ mongo
 /Shaligula/android
 /Shaligula/ios
 /Shaligula/.bundle
+/Shaligula/node_modules
+/Shaligula/vendor
