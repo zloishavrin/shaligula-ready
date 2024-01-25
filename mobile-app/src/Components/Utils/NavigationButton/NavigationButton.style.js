@@ -15,7 +15,7 @@ export const styles = StyleSheet.create({
     image: {
         minHeight: "100%",
         maxHeight: "100%",
-        minWidth: '40%',
-        maxWidth: '40%'
+        minWidth: "40%",
+        maxWidth: "40%"
     }
 })

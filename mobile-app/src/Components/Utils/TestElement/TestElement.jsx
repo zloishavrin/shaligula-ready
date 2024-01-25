@@ -8,14 +8,14 @@ export const TestElement = ({ isFavorite, element, favoriteHandler, openTest }) 
     return (
         <View style={styles.container}>
             <Image 
-                source={{uri: `https://dev.shaligula.ru/university-image/${element.img_path}`}} 
+                source={{ uri: `https://dev.shaligula.ru/university-image/${element.img_path}` }} 
                 style={styles.image} 
             />
             <View style={styles.rightContainer}>
                 <Text style={styles.text}>{element.name}</Text>
                 <View style={styles.bottomContainer}>
                     <BigButton 
-                        text={'Перейти'}
+                        text={"Перейти"}
                         handler={() => openTest(element)}
                     />
                     <SmallButton 

@@ -1,0 +1,32 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2023,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "rules": {
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "quotes": ["warn", "double"],
+        "indent": ["warn", 4, {"SwitchCase": 1}],
+        "object-curly-spacing": ["warn", "always"],
+        "comma-dangle": ["warn", "never"],
+        "react/jsx-uses-vars": "warn",
+        "react/prop-types": "off"
+    },
+    "env": {
+        "browser": true,
+        "node": true
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    }
+}

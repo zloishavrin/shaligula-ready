@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         height: "100%",
         width: "100%",
         alignItems: "center",
-        paddingBottom: '85%'
+        paddingBottom: "85%"
     },
     buttonContainer: {
         width: "100%",

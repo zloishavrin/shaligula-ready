@@ -1,15 +1,14 @@
-import { SafeAreaView, ScrollView, Text, View, TouchableHighlight, Image } from "react-native"
+import { SafeAreaView, ScrollView, Text, View } from "react-native"
 import useGet from "../../../Hooks/Fetch/useGet"
 import { Loader } from "../../Utils/Loader/Loader";
 import { QuestElement } from "../../Utils/QuestElement/QuestElement";
 import { Multiform } from "../../Utils/Multiform/Multiform";
-import { NavigationButton } from "../../Utils/NavigationButton/NavigationButton";
 import { styles } from "./Test.style";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useResults } from "../../../Hooks/LocalStorage/useResults";
 import { BigButton } from "../../Utils/BigButton/BigButton";
 import { CloseButton } from "../../Utils/CloseButton/CloseButton";
-const CloseIcon = require('../../../assets/close.png');
+import { Error } from "../../Utils/Error/Error";
 
 export const Test = ({ element, closeTest, openResults }) => {
 
@@ -21,7 +20,7 @@ export const Test = ({ element, closeTest, openResults }) => {
     console.log(openResults);
 
     if(loading) return <Loader />
-    else if(error) return <Error text={'К сожалению, не получилось загрузить тест, попробуйте позже :('} />
+    else if(error) return <Error text={"К сожалению, не получилось загрузить тест, попробуйте позже :("} />
 
     const changeQuest = (index, value) => {
         const newQuest = [...quest];
@@ -81,24 +80,23 @@ export const Test = ({ element, closeTest, openResults }) => {
                                 )
                             } 
                         </Multiform>
-                    :
+                        :
                         <View style={styles.resultsContainter}>
                             <Text style={styles.resultsTitle}>Ваш результат:</Text>
                             <Text style={styles.resultsText}>{result.true_answer}/{result.all_quest}</Text>
                             <BigButton 
-                                text={'Подробнее'} 
+                                text={"Подробнее"} 
                                 handler={() =>  {
                                     console.log(1);
                                     openResults(result);
                                 }}
                             />
                             <BigButton 
-                                text={'Закрыть'}
+                                text={"Закрыть"}
                                 handler={closeTest}
                             />
                         </View>
                 }
-
             </ScrollView>
         </SafeAreaView>
     )

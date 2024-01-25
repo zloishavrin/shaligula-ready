@@ -1,4 +1,4 @@
-import { ScrollView, Text, View, TouchableHighlight, Image } from "react-native"
+import { ScrollView, Text, View } from "react-native"
 import { styles } from "./Results.style";
 import { CloseButton } from "../../Utils/CloseButton/CloseButton";
 

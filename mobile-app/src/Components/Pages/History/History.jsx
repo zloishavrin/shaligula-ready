@@ -1,4 +1,4 @@
-import { ScrollView, Text } from "react-native";
+import { ScrollView } from "react-native";
 import { HistoryElement } from "../../Utils/HistoryElement/HistoryElement";
 import { styles } from "./History.style";
 import { useResults } from "../../../Hooks/LocalStorage/useResults";

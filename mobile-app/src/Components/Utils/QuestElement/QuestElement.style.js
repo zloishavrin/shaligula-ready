@@ -16,7 +16,7 @@ export const styles = StyleSheet.create({
     },
     variable: {
         flexDirection: "row",
-        marginTop: 15,
+        marginTop: 15
     },
     text: {
         color: "#FFFFFF",

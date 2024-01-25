@@ -8,7 +8,7 @@ export const BigButton = ({ text, handler }) => {
             style={styles.button}
             onPress={handler}
             activeOpacity={1}
-            underlayColor={'#333333'}
+            underlayColor={"#333333"}
         >
             <Text style={styles.buttonText}>{text}</Text>
         </TouchableHighlight>

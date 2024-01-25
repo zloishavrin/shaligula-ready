@@ -1,5 +1,5 @@
 import { styles } from "./CloseButton.style";
-const CloseIcon = require('../../../assets/close.png');
+const CloseIcon = require("../../../assets/close.png");
 import { View, TouchableHighlight, Image } from "react-native";
 
 export const CloseButton = ({ handler }) => {
@@ -9,7 +9,7 @@ export const CloseButton = ({ handler }) => {
             <TouchableHighlight
                 style={styles.button}
                 activeOpacity={1}
-                underlayColor={'#333333'}
+                underlayColor={"#333333"}
                 onPress={handler}
             >
                 <Image 

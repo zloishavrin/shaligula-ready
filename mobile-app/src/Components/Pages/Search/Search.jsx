@@ -9,12 +9,12 @@ import { useState } from "react";
 
 export const Search = ({ openTest }) => {
 
-    const [ search, setSearch ] = useState('');
-    const [ loading, error, value ] = useGet(search ? `/search-test?search=${search}` : '/all-test');
+    const [ search, setSearch ] = useState("");
+    const [ loading, error, value ] = useGet(search ? `/search-test?search=${search}` : "/all-test");
     const { favorite, addFavorite, deleteFavorite } = useFavorite();
 
     if(loading) return <Loader />;
-    else if(error) return <Error text={'Извините, произошла ошибка при загрузке.'}/>;
+    else if(error) return <Error text={"Извините, произошла ошибка при загрузке."}/>;
 
     return (
         <>

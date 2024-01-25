@@ -4,8 +4,8 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: "#191919",
         color: "white",
-        height: '100%',
-        paddingBottom: '5%'
+        height: "100%",
+        paddingBottom: "5%"
     },
     contentContainer: {
         width: "100%",

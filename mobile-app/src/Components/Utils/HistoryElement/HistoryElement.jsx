@@ -16,7 +16,7 @@ export const HistoryElement = ({ element, openResults }) => {
             </View>
             <View style={styles.buttonContain}>
                 <BigButton 
-                    text={'Смотреть'} 
+                    text={"Смотреть"} 
                     handler={openResults}
                 />
             </View>

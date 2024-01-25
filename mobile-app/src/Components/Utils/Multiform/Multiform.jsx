@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { Text, View } from "react-native"
+import { View } from "react-native"
 import { styles } from "./Multiform.style";
 import { BigButton } from "../BigButton/BigButton";
 
@@ -11,15 +11,15 @@ export const Multiform = ({ children, closeTest }) => {
         <View style={styles.container}>
             {children[numberOfPage]}
             <View style={styles.buttonContainer}>
-                {numberOfPage > 0 && <BigButton text={'Назад'} handler={() => setNumberOfPage(numberOfPage-1)} />}
+                {numberOfPage > 0 && <BigButton text={"Назад"} handler={() => setNumberOfPage(numberOfPage-1)} />}
                 {numberOfPage < children.length-1 ? 
                     <BigButton 
-                        text={'Далее'} 
+                        text={"Далее"} 
                         handler={() => setNumberOfPage(numberOfPage+1)}
                     />
-                : 
+                    : 
                     <BigButton 
-                        text={'Закончить'} 
+                        text={"Закончить"} 
                         handler={closeTest} 
                     />
                 }
