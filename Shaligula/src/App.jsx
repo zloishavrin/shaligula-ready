@@ -10,15 +10,16 @@ import { Results } from './Components/Pages/Results/Results';
 
 function App() {
 
-    const [page, setPage] = useState(<Search />);
     const [test, setTest] = useState(null);
     const [results, setResults] = useState(null);
 
     const closeResults = () => setResults(null);
     const openResults = (results) => {
         setTest(null);
-        setResults(<Results results={results} closeResults={closeResults} />)
+        setResults(<Results results={results} closeResults={closeResults} />);
     }
+
+    const [page, setPage] = useState(<History openResults={openResults} />);
 
     const closeTest = () =>  setTest(null);
     const openTest = (test) => setTest(<Test element={test} closeTest={closeTest} openResults={openResults} />);
@@ -32,7 +33,9 @@ function App() {
             <StatusBar 
                 animated={true}
                 showHideTransition={'slide'}
-                hidden={true}
+                hidden={false}
+                backgroundColor={'#191919'}
+                barStyle={'light-content'}
             />
 
             {test ?  

@@ -5,11 +5,11 @@ import { CloseButton } from "../../Utils/CloseButton/CloseButton";
 export const Results = ({ results, closeResults }) => {
 
     return (
-        <View>
+        <View style={styles.container}>
             <CloseButton 
                 handler={closeResults}
             />
-            <ScrollView style={styles.container}>
+            <ScrollView style={styles.scrollContainer}>
                 <View style={styles.contentContainer}>
                     <View style={styles.answerContainer}>
                         <Text style={styles.testTitle}>{results.name}</Text>

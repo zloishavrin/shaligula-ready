@@ -4,21 +4,8 @@ export const styles = StyleSheet.create({
     container: {
         backgroundColor: "#191919",
         color: "white",
-        height: "100%",
-        width: "100%"
-    },
-    buttonContainer: {
-        width: "100%",
-        alignItems: "flex-start"
-    },
-    button: {
-        borderRadius: 100,
-        width: 70,
-        height: 70
-    },
-    buttonImage: {
-        width: "100%",
-        height: "100%"
+        height: '100%',
+        paddingBottom: '5%'
     },
     contentContainer: {
         width: "100%",

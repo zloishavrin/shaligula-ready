@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
     page: {
         backgroundColor: "#191919",
         color: "white",
-        flex: 9,
+        flex: 12,
         alignItems: "center"
     }
 })

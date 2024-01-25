@@ -6,7 +6,8 @@ export const styles = StyleSheet.create({
         color: "white",
         height: "100%",
         width: "100%",
-        alignItems: "center"
+        alignItems: "center",
+        paddingBottom: '85%'
     },
     buttonContainer: {
         width: "100%",

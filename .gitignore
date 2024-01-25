@@ -3,3 +3,8 @@
 /app/image
 mongo
 .DS_Store
+.vscode
+Shaligula
+Shaligula/android
+Shaligula/ios
+Shaligula/.bundle

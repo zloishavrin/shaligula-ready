@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Noto Sans Display", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #191919;
+    color: white;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.titleContainer h1 {
+    font-size: 4vw;
+    font-weight: 700;
+}
+
+.descriptionContainer {
+    margin-top: 1vw;
+    font-size: 1.5vw;
+    max-width: 40vw;
+    font-weight: 400;
+}
+
+.descriptionContainer p {
+    margin-top: 1vw;
+}
+
+.hrefContainer {
+    margin-top: 1.5vw;
+}
+
+.hrefContainer svg {
+    height: 3.5vw;
+    width: auto;
+    margin-right: 1vw;
+    transition: all 0.2s ease-out;
+}
+
+.hrefContainer svg:hover {
+    opacity: 0.8;
+    transform: scale(0.95);
+}
+
+.imageContainer svg {
+    transition: all 1s linear;
+    border-radius: 100vw;
+    box-shadow: 0vw 0vw 5vw 0vw #f0b41e6a;
+    width: 22vw;
+    height: 22vw;
+}
+
+.imageContainer svg:hover {
+    transform: rotate(180deg);
+}
+
+@media(max-width: 1000px) {
+
+    main {
+        align-items: flex-start;
+    }
+
+    .imageContainer {
+        display: none;
+    }
+
+    .textContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .titleContainer h1 {
+        font-size: 10vw;
+    }
+
+    .descriptionContainer {
+        font-size: 7vw;
+        max-width: 90vw;
+        text-align: center;
+    }
+
+    .descriptionContainer p {
+        margin-top: 8vw;
+    }
+
+    .hrefContainer {
+        max-width: 80vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .hrefContainer svg {
+        height: 12vw;
+        margin-right: 3.5vw;
+        margin-left: 3.5vw;
+        margin-top: 5vw;
+    }
+
+}

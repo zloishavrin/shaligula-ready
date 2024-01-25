@@ -8,8 +8,7 @@ export const styles = StyleSheet.create({
         width: "100%",
     },
     contentContainer: {
-        height: "100%",
-        paddingBottom: 200
+        height: "100%"
     },
     buttonContainer: {
         width: "100%",
@@ -28,7 +27,8 @@ export const styles = StyleSheet.create({
         width: "100%",
         height: "100%",
         alignItems: "center",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+        paddingBottom: '40%'
     },
     resultsTitle: {
         color: "#FFFFFF",
