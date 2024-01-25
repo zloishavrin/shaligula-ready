@@ -13,9 +13,9 @@ export const styles = StyleSheet.create({
         marginRight: "3%"
     },
     image: {
-        minHeight: "100%",
-        maxHeight: "100%",
-        minWidth: "40%",
-        maxWidth: "40%"
+        width: "85%",
+        height: "85%",
+        alignItems: "center",
+        justifyContent: "center"
     }
 })
