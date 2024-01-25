@@ -18,8 +18,4 @@ router.post('/tests', [
     check('tests', 'Массив тестов не может быть пустой.').notEmpty()
 ], controller.getTestsByIds);
 
-/*router.get('/check-result', [
-    check('question', 'Массив вопрос не может быть пустым').notEmpty()
-], controller.checkResult);*/
-
 module.exports = router;

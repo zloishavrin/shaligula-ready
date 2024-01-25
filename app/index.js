@@ -6,7 +6,7 @@ const testRouter = require('./routers/testRouter')
 const init = require('./init');
 
 const PORT = 3333;
-const dbUri = `mongodb://devroot:devroot@mongo:27017/university?authSource=admin`;
+const dbUri = `mongodb://${process.env.MONGO_ROOT_USER}:${process.env.MONGO_ROOT_PASSWORD}@mongo:27017/university?authSource=admin`;
 
 const app = express();
 
@@ -17,9 +17,9 @@ app.use('/university-image', express.static(path.join(__dirname, 'image')));
 
 const start = async () => {
     try {
-        await mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true })
+        await mongoose.connect(dbUri, { useNewUrlParser: true, useUnifiedTopology: true });
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
-        init();
+        //init();
     }
     catch(error) {
         console.log(error);
