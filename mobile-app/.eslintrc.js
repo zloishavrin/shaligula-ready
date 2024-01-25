@@ -20,5 +20,15 @@ module.exports = {
         "no-console": "warn",
         "no-unused-vars": "warn",
     },
+    overrides: [
+        {
+            files: ["*.jsx"],
+            parserOptions: {
+                ecmaFeatures: {
+                    jsx: true,
+                },
+            },
+        },
+    ],
 };
   
