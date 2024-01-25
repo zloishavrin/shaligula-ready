@@ -4,9 +4,8 @@
 mongo
 .DS_Store
 .vscode
-
-Shaligula/android
-Shaligula/ios
-Shaligula/.bundle
-Shaligula/node_modules
-Shaligula/vendor
+mobile-app/.bundle
+mobile-app/android
+mobile-app/ios
+mobile-app/vendor
+mobile-app/node_modules
