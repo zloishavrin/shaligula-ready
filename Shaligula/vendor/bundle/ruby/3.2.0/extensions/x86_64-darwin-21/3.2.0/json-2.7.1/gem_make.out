@@ -1,0 +1,16 @@
+current directory: /Users/macbook/Desktop/university/Shaligula/vendor/bundle/ruby/3.2.0/gems/json-2.7.1/ext/json
+/Users/macbook/.rvm/rubies/ruby-3.2.0/bin/ruby -I /Users/macbook/.rvm/rubies/ruby-3.2.0/lib/ruby/3.2.0 extconf.rb
+creating Makefile
+
+current directory: /Users/macbook/Desktop/university/Shaligula/vendor/bundle/ruby/3.2.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240122-2470-b3eu12 sitelibdir\=./.gem.20240122-2470-b3eu12 clean
+
+current directory: /Users/macbook/Desktop/university/Shaligula/vendor/bundle/ruby/3.2.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240122-2470-b3eu12 sitelibdir\=./.gem.20240122-2470-b3eu12
+make: Nothing to be done for `all'.
+
+current directory: /Users/macbook/Desktop/university/Shaligula/vendor/bundle/ruby/3.2.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240122-2470-b3eu12 sitelibdir\=./.gem.20240122-2470-b3eu12 install
+
+current directory: /Users/macbook/Desktop/university/Shaligula/vendor/bundle/ruby/3.2.0/gems/json-2.7.1/ext/json
+make DESTDIR\= sitearchdir\=./.gem.20240122-2470-b3eu12 sitelibdir\=./.gem.20240122-2470-b3eu12 clean
