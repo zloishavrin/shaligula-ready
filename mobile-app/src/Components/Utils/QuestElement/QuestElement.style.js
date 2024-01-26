@@ -16,12 +16,14 @@ export const styles = StyleSheet.create({
     },
     variable: {
         flexDirection: "row",
-        marginTop: 15
+        marginTop: 15,
+        alignItems: "flex-start"
     },
     text: {
         color: "#FFFFFF",
-        fontSize: 20,
-        marginLeft: 10
+        fontSize: 18,
+        marginLeft: 10,
+        maxWidth: "85%"
     },
     button: {
         borderColor: "#FFFFFF",
